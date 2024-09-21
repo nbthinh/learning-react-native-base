@@ -1,9 +1,9 @@
 import { useState } from 'react';
-import { Button, StyleSheet, Text, TextInput, View, ScrollView } from 'react-native';
+import { Button, StyleSheet, Text, TextInput, View, ScrollView, FlatList } from 'react-native';
 
 export default function App() {
   const [students, setStudents] = useState([
-    { id: 1, name: "Mặc cái quần 1", age: 18 },
+    { id: 1, name: "Mặc cái quần 1", age: 18, key: "1" },
     { id: 2, name: "Mặc cái quần 2", age: 19 },
     { id: 3, name: "Mặc cái quần 3", age: 20 },
     { id: 4, name: "Mặc cái quần 4", age: 21 },
@@ -17,7 +17,24 @@ export default function App() {
   return (
     <View style={styles.container}>
       <Text style={{fontSize: 60}}>Hello world</Text>
-      <ScrollView>
+      <FlatList
+        keyExtractor={item => item.id + ""}
+        data={students}
+        numColumns={2}
+        renderItem={({item, index, separators}) => {
+          return (
+            <View style={{
+              backgroundColor: "pink",
+              marginBottom: 35,
+              padding: 35,
+              marginHorizontal: 35
+            }}>
+              <Text>{item.name}</Text>
+            </View>
+          )
+        }}
+      />
+      {/* <ScrollView>
         { students.map(item => {
           return (
             <View style={{
@@ -29,7 +46,7 @@ export default function App() {
             </View>
           )
         }) }
-      </ScrollView>
+      </ScrollView> */}
     </View>
   );
 }
