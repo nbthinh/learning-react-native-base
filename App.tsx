@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import { Button, StyleSheet, Text, TextInput, View, ScrollView, FlatList } from 'react-native';
+import { Button, StyleSheet, Text, TextInput, View, ScrollView, FlatList, TouchableOpacity, Pressable } from 'react-native';
 
 
 interface ITodo {
@@ -19,9 +19,20 @@ export default function App() {
   }
   
   const handleAddTodo = () => {
+    if (!todo) {
+      alert("Empty todo");
+      return;
+    }
     setListTodo([...listTodo, {id: randomInteger(2, 2000000), name: todo}]);
     setTodo("");
   }
+
+
+  const deleteTodo = (id: number) => {
+    let newTodos = listTodo.filter(item => item.id !== id)
+    setListTodo(newTodos);
+  }
+
   return (
     <View style={styles.container}>
       <Text style={styles.header}>Todo app</Text>
@@ -48,7 +59,12 @@ export default function App() {
             ({item}) => {
               console.log(item)
               return (
-                <Text style={styles.todoItem}>{item.name}</Text>
+                <Pressable
+                  onPress={() => deleteTodo(item.id)}
+                  style={({pressed}) => ({opacity: pressed ? 0.5 : 1})}
+                >
+                  <Text style={styles.todoItem}>{item.name}</Text>
+                </Pressable>
               )
             }
           }
