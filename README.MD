@@ -37,3 +37,6 @@ Các bước cài đặt: (chế độ development)
 - Để chạy ứng dụng:
   - npm install
   - npm run dev
+- Google: js object dynamic key
+- npm i --save-exact @react-navigation/native@6.1.18 @react-navigation/native-stack@6.10.1
+- npm i --save-exact react-native-screens@3.31.1 react-native-safe-area-context@4.10.5
