@@ -24,7 +24,7 @@ const App = () => {
   if (!loaded && !error) {
     return null;
   }
-  const Stack = createNativeStackNavigator();
+  const Stack = createNativeStackNavigator<RootStackParamList>();
 
   return (
     // <View>

@@ -1,6 +1,7 @@
 import { View, Text, Button } from "react-native";
 
-const HomeScreen = () => {
+const HomeScreen = (props: any) => {
+  const { navigation } = props;
   return (
     <View>
       <Text style={{ fontSize: 40 }}>
@@ -9,11 +10,7 @@ const HomeScreen = () => {
       </Text>
       <Button
         title="View Detail"
-        onPress={() =>
-          alert(
-            "thằng nghiêm văn sỹ lúc thì mạt sát mình, lúc thì nó nói chuyện dễ nghe, đúng là đa nhân cách"
-          )
-        }
+        onPress={() => navigation.navigate("review-detail")}
       />
     </View>
   );
