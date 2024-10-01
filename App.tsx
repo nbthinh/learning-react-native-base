@@ -12,6 +12,7 @@ import { createNativeStackNavigator } from "@react-navigation/native-stack";
 import "react-native-gesture-handler";
 import { createDrawerNavigator } from "@react-navigation/drawer";
 import AppNavigation from "./components/navigation/app.navigation";
+import { SafeAreaView } from "react-native-safe-area-context";
 
 SplashScreen.preventAutoHideAsync();
 
@@ -34,9 +35,11 @@ const App = () => {
     //   <DetailScreen />
     //   <AboutScreen />
     // </View>
-    <NavigationContainer>
-      <AppNavigation />
-    </NavigationContainer>
+    <SafeAreaView style={{ flex: 1 }}>
+      <NavigationContainer>
+        <AppNavigation />
+      </NavigationContainer>
+    </SafeAreaView>
   );
 };
 

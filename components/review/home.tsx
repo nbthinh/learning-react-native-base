@@ -31,7 +31,7 @@ const HomeScreen = () => {
   ]);
   return (
     <View>
-      <Text style={{ fontSize: 30 }}>
+      <Text style={{ fontSize: 30, padding: 10 }}>
         thằng nghiêm văn sỹ lúc thì mạt sát người ta, lúc thì nói chuyện dễ
         nghe, đúng là đa nhân cách
       </Text>
