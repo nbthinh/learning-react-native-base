@@ -41,3 +41,5 @@ Các bước cài đặt: (chế độ development)
 - npm i --save-exact @react-navigation/native@6.1.18 @react-navigation/native-stack@6.10.1
 - npm i --save-exact react-native-screens@3.31.1 react-native-safe-area-context@4.10.5
 - https://stackoverflow.com/questions/60896364/react-native-with-typescript-how-to-use-the-useroute-from-react-navigation-na
+- https://stackoverflow.com/questions/44701245/hide-header-in-stack-navigator-react-navigation
+- https://reactnavigation.org/docs/drawer-actions/

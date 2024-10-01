@@ -8,6 +8,7 @@ import {
   TouchableOpacity,
   StyleSheet,
 } from "react-native";
+import AppHeader from "../navigation/app.header";
 
 interface IReview {
   id: number;
