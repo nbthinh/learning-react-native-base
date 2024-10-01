@@ -9,6 +9,9 @@ import { useEffect } from "react";
 import { OPENSANS_REGULAR } from "./utils/const";
 import { NavigationContainer } from "@react-navigation/native";
 import { createNativeStackNavigator } from "@react-navigation/native-stack";
+import "react-native-gesture-handler";
+import { createDrawerNavigator } from "@react-navigation/drawer";
+import AppNavigation from "./components/navigation/app.navigation";
 
 SplashScreen.preventAutoHideAsync();
 
@@ -24,7 +27,6 @@ const App = () => {
   if (!loaded && !error) {
     return null;
   }
-  const Stack = createNativeStackNavigator<RootStackParamList>();
 
   return (
     // <View>
@@ -33,18 +35,7 @@ const App = () => {
     //   <AboutScreen />
     // </View>
     <NavigationContainer>
-      <Stack.Navigator>
-        <Stack.Screen
-          name="home"
-          component={HomeScreen}
-          options={{ title: "Trang chủ" }}
-        />
-        <Stack.Screen
-          name="review-detail"
-          component={DetailScreen}
-          options={{ title: "Chi tiết review" }}
-        />
-      </Stack.Navigator>
+      <AppNavigation />
     </NavigationContainer>
   );
 };

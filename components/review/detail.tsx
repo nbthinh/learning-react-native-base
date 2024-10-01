@@ -19,9 +19,9 @@ const styles = StyleSheet.create({
   },
 });
 
-const DetailScreen = () => {
-  const navigation: NavigationProp<RootStackParamList> = useNavigation();
-  const route: RouteProp<RootStackParamList, "review-detail"> = useRoute();
+const DetailScreen = ({ navigation, route }: any) => {
+  // const navigation: NavigationProp<RootStackParamList> = useNavigation();
+  // const route: RouteProp<RootStackParamList, "review-detail"> = useRoute();
   console.log();
   return (
     <View>
