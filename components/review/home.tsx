@@ -8,7 +8,8 @@ import {
   TouchableOpacity,
   StyleSheet,
 } from "react-native";
-import AppHeader from "../navigation/app.header";
+import CreateModal from "./create.modal";
+import AntDesign from "@expo/vector-icons/AntDesign";
 
 interface IReview {
   id: number;
@@ -29,12 +30,21 @@ const HomeScreen = () => {
     { id: 1, title: "React native", star: 5 },
     { id: 2, title: "Phuận Văn Tám", star: 5 },
   ]);
+  const [modalVisible, setModalVisible] = useState(false);
   return (
     <View>
       <Text style={{ fontSize: 30, padding: 10 }}>
         thằng nghiêm văn sỹ lúc thì mạt sát người ta, lúc thì nói chuyện dễ
         nghe, đúng là đa nhân cách
       </Text>
+      <View style={{ alignItems: "center" }}>
+        <AntDesign
+          name="plussquareo"
+          size={40}
+          color="orange"
+          onPress={() => setModalVisible(true)}
+        />
+      </View>
       <View>
         <FlatList
           data={reviews}
@@ -52,6 +62,10 @@ const HomeScreen = () => {
           }}
         />
       </View>
+      <CreateModal
+        modalVisible={modalVisible}
+        setModalVisible={setModalVisible}
+      />
     </View>
   );
 };

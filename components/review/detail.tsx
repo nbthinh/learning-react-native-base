@@ -60,7 +60,7 @@ const DetailScreen = ({ navigation, route }: any) => {
       </View>
       {/* <Button title="Go Home" onPress={() => navigation.navigate("home")} /> */}
     </View>
-    {/* </ImageBackground> */}
+    // </ImageBackground>
   );
 };
 
